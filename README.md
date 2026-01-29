@@ -2,24 +2,33 @@
 
 Make everything a GitHub svg poster and [skyline](https://skyline.github.com/)!
 
-##  `svg` in `README` examples
+简体中文 | [English](https://github.com/yihong0618/GitHubPoster/blob/main/README-EN.md)
 
-![](https://github.com/yihong0618/GitHubPoster/blob/main/examples/twitter.svg)
+## 直接引入 `svg` 在 `README` 中的例子
 
-## Circular
+![](https://github.com/yihong0618/GitHubPoster/blob/main/examples/issue.svg)
 
-![](https://github.com/yihong0618/GitHubPoster/blob/main/examples/strava_circular.svg)
+## Summary
+
+![](https://github.com/yihong0618/GitHubPoster/blob/main/examples/summary_2021.svg)
 
 ## Skyline
 
 ![image](https://user-images.githubusercontent.com/15976103/120966953-80d07180-c799-11eb-8769-92554905ab3f.png)
 
-## Support
+## Circular
+
+![](https://github.com/yihong0618/GitHubPoster/blob/main/examples/strava_circular.svg)
+
+## 支持
 
 - **[Strava](#strava)**
+- **[开心词场](#开心词场)**
+- **[扇贝](#扇贝)**
+- **[不背单词](#不背单词)**
 - **[Nintendo Switch](#ns)**
 - **[GPX](#GPX)**
-- **[Duolingo](#duolingo)**
+- **[多邻国](#多邻国)**
 - **[Issue](#Issue)**
 - **[YouTube](#Youtube)**
 - **[Bilibili](#Bilibili)**
@@ -32,51 +41,54 @@ Make everything a GitHub svg poster and [skyline](https://skyline.github.com/)!
 - **[Notion](#Notion)**
 - **[Garmin](#Garmin)**
 - **[Forest](#Forest)**
-- **[Json](#Json)**
+- **[Json](#json)**
 - **[Multiple](#Multiple)**
-- **[Jike](#Jike)**
-- **[Summary](#Summary)**
+- **[即刻](#即刻)**
+- **[微信读书](#微信读书)**
+- **[总结](#Summary)**
+- **[Covid](#Covid)**
 - **[Todoist](#Todoist)**
-- **[OpenLanguage](#OpenLanguage)**
+- **[开言英语](#开言英语)**
 - **[Apple Health](#AppleHealth)**
 - **[ChatGPT](#ChatGPT)**
 - **[NeoDB](#NeoDB)**
 - **[AutoSleep](#AutoSleep)**
 
-## Download
+## 下载
+
 ```
 git clone https://github.com/yihong0618/GitHubPoster.git
 ```
-## pip install
+## pip 安装
 
 ```
 pip3 install -U 'github_poster[all]'
 ```
 
-## Install(Python3.6+)
+## 安装(Python3.6+)
+
 ```
 pip3 install -r requirements.txt
 ```
 
-## Use
+## 使用
 
-The generated svg is in `OUT_FOLDER`, named with type (for now)
+生成的 svg 在 `OUT_FOLDER` 内, 用 type 命名（暂时）
 
-Different types are used as specified below:
+不同类型按下方指定的使用方式：
 
-- `--year 2021`: You can specify a year (default) or a year range `--year 2012-2021`
-- `--special-number1 10 -- special_number2 20`: By default, the number of different colors is automatically generated (special colors), you can also specify the color
-- `--special-color1 pink --special-color2 '#33C6A4'`: You can also specify the color
-- `--with-animation`: You can add animation (add GOGOGO animation)
-- `--animation-time 14`: you can control the animation time (default is 10s), use with `--with-animation`
-- `--with-skyline`: You can save skyline `stl` file (default skyline year is to_year),
-- `--skyline-with-name`: set to print user name on model, use with `--with-skyline`
-- `--is-circular`: With this command, the svg will be circular and with animation
-- `--without-type-name`: Support for hiding the name of the build type in the title
-- `---stand-with-ukraine`
+- `--year 2022`: 可以指定年份(默认)或年份区间 `--year 2012-2022`
+- `--track-color=#f4cccc`: 指定基础颜色
+- `--special-number1 10 -- special_number2 20`: 可以指定特殊颜色，默认自动生成不同颜色需要的 number（特殊颜色）
+- `--special-color1 pink --special-color2 '#33C6A4'`: 指定特殊颜色
+- `--with-animation`: 可以增加动画  (加入 GOGOGO 动画)
+- `--animation-time 14`: 可以控制动画时间（默认是 10s）, 配合 `--with-animation` 使用
+- `--with-skyline`: 可以增加 Skyline  (默认生成的为 to_year)
+- `--skyline-with-name`: 将用户名打印在 Skyline 上, 配合 `--with-skyline` 使用
+- `--is-circular`: 支持 circular svg 配合动画
+- `--without-type-name`: 支持隐藏标题中生成类型的名称
 
-Other parameters can be found with `python3 -m github_poster <type> --help`
-
+其它参数可以见 `python3 -m github_poster <type> --help`
 
 ### GPX
 
@@ -84,11 +96,11 @@ Other parameters can be found with `python3 -m github_poster <type> --help`
 <summary>Make your <code>GPX</code> GitHub poster</summary>
 <br>
 
-mv gpx files to `GPX_FOLDER` then run the code
+把其它软件生成的(like running_page) gpx files 拷贝到 `GPX_FOLDER` 之后运行，或指定文件夹如我的文件夹是 `~/blog/GPX_OUT/`
 ```
 python3 -m github_poster gpx --gpx_dir ~/blog/GPX_OUT/ --year 2013-2021
 or pip
-github_poster github_poster gpx --gpx_dir ~/blog/GPX_OUT/ --year 2013-2021
+github_poster gpx --gpx_dir ~/blog/GPX_OUT/ --year 2013-2021
 ```
 </details>
 
@@ -97,41 +109,32 @@ github_poster github_poster gpx --gpx_dir ~/blog/GPX_OUT/ --year 2013-2021
 <details>
 <summary>Make your <code>Strava</code> GitHub poster</summary>
 
-1. Sign in/Sign up [Strava](https://www.strava.com/) account
-2. Open after successful Signin [Strava Developers](http://developers.strava.com) -> [Create & Manage Your App](https://strava.com/settings/api)
+1. 注册/登陆 [Strava](https://www.strava.com/) 账号
+2. 登陆成功后打开 [Strava Developers](http://developers.strava.com) -> [Create & Manage Your App](https://strava.com/settings/api)
 
-3. Create `My API Application`: Enter the following information
-
-<br>
-
+3. 创建 `My API Application`
+输入下列信息：
 ![My API Application](https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/strava_settings_api.png)
-Created successfully：
-
-<br>
-
+创建成功：
 ![](https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/created_successfully_1.png)
-
-4. Use the link below to request all permissions: Replace `${your_id}` in the link with `My API Application` `Client ID`
+4. 使用以下链接请求所有权限
+将 ${your_id} 替换为 My API Application 中的 Client ID 后访问完整链接
 ```
 https://www.strava.com/oauth/authorize?client_id=${your_id}&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read_all,profile:read_all,activity:read_all,profile:write,activity:write
 ```
 ![get_all_permissions](https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/get_all_permissions.png)
-
-5. Get the `code` value in the link
-
-<br>
-
-example：
+5. 提取授权后返回链接中的 code 值
+例如：
 ```
 http://localhost/exchange_token?state=&code=1dab37edd9970971fb502c9efdd087f4f3471e6e&scope=read,activity:write,activity:read_all,profile:write,profile:read_all,read_all
 ```
-`code` value：
+`code` 数值为：
 ```
 1dab37edd9970971fb502c9efdd087f4f3471e6
 ```
 ![get_code](https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/get_code.png)
-
-6. Use `Client_id`、`Client_secret`、`Code` get `refresch_token`: Execute in `Terminal/iTerm`
+6. 使用 `Client_id`、`Client_secret`、`Code` 请求 `refresch_token`
+在 `终端/iTerm` 中执行：
 ```
 curl -X POST https://www.strava.com/oauth/token \
 -F client_id=${Your Client ID} \
@@ -139,7 +142,7 @@ curl -X POST https://www.strava.com/oauth/token \
 -F code=${Your Code} \
 -F grant_type=authorization_code
 ```
-example：
+示例：
 ```
 curl -X POST https://www.strava.com/oauth/token \
 -F client_id=12345 \
@@ -149,10 +152,12 @@ curl -X POST https://www.strava.com/oauth/token \
 ```
 ![get_refresch_token](https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/get_refresch_token.png)
 
+7. 同步数据至 `Strava`
+在项目根目录执行：
 ```
-python3 -m github_poster --strava_client_id  ${client_id} --strava_client_secret ${client_secret} --strava_refresh_token ${refresh_token} --year 2012-2021
+python3 -m github_poster strava --strava_client_id  ${client_id} --strava_client_secret ${client_secret} --strava_refresh_token ${refresh_token} --year 2012-2021
 or pip
-github_poster --strava_client_id  ${client_id} --strava_client_secret ${client_secret} --strava_refresh_token ${refresh_token} --year 2012-2021
+github_poster strava --strava_client_id  ${client_id} --strava_client_secret ${client_secret} --strava_refresh_token ${refresh_token} --year 2012-2021
 ```
 </details>
 
@@ -162,7 +167,7 @@ github_poster --strava_client_id  ${client_id} --strava_client_secret ${client_s
 <summary>Make your <code>Nintendo Switch</code> GitHub poster</summary>
 <br>
 
-From APP`(Nintendo Switch Parent Controls)` using `mitmproxy` to get the `session_token` and `devide _id`
+需要下载 `家长控制那个 APP(Nintendo Switch Parent Controls)` 进行抓包（可以使用 mitmproxy 等抓包软件）
 
 ```
 python3 -m github_poster ns --ns_session_token ${session_token} --ns_device_id ${device_id} --year 2020-2021
@@ -171,24 +176,70 @@ github_poster ns --ns_session_token ${session_token} --ns_device_id ${device_id}
 ```
 </details>
 
-
-### Duolingo
+### 开心词场
 
 <details>
-<summary>Make your <code>Duolingo</code> GitHub poster</summary>
+<summary>Make your <code>开心词场</code> GitHub poster</summary>
 <br>
 
-1. login duolingo in broswer
-2. console `document.cookie.match(new RegExp('(^| )jwt_token=([^;]+)'))[0].slice(11)` get duolingo_jwt
+需要填写开心词场的账号和密码
 
-Find your `duolingo id`, F12 from `XHR`
-![image](https://user-images.githubusercontent.com/15976103/116336188-baad7000-a80a-11eb-80d7-033d4bf0f260.png)
+```
+python3 -m github_poster cichang --cichang_user_name ${user_name} --cichang_password ${pass_word} --year 2016-2021 --special-color1 blue --special-color2 pink --me yihong0618
+or
+github_poster cichang --cichang_user_name ${user_name} --cichang_password ${pass_word} --year 2016-2021 --special-color1 blue --special-color2 pink --me yihong0618
+```
+</details>
+
+### 多邻国
+
+<details>
+<summary>Make your <code>多邻国（duolingo）</code> GitHub poster</summary>
+<br>
+
+1. 在网页登录多邻国
+
+2. 按`F12`在控制台（console）使用 `document.cookie.match(new RegExp('(^| )jwt_token=([^;]+)'))[0].slice(11)` 获取 duolingo_jwt
+
+3. 在多邻国用户主页或 通过地址栏 `https://www.duolingo.cn/profile/{duolingo id}` 获取 duolingo id
+
+```
+python3 -m github_poster duolingo --duolingo_user_name ${duolingo_user_name} --duolingo_jwt ${duolingo_jwt} --year 2015-2021
+or
+github_poster duolingo --duolingo_user_name ${duolingo_user_name} --duolingo_jwt ${duolingo_jwt} --year 2015-2021
+```
+</details>
+
+### 扇贝
+
+<details>
+<summary>Make your <code>扇贝（shanbay）</code> GitHub poster</summary>
+<br>
+需要找到你的扇贝 user_id, 从网页抓 xhr 就可以获得如下图
+![image](https://user-images.githubusercontent.com/15976103/116340351-a02ac500-a811-11eb-938f-72ff141e4942.png)
+
+```
+python3 -m github_poster shanbay --shanbay_user_name ${user_name} --year 2012-2021 --special-color1 '#009688' --special-color2 '#007BFF' --track-color '#ADD8E6'
+or
+github_poster shanbay --shanbay_user_name ${user_name} --year 2012-2021 --special-color1 '#009688' --special-color2 '#007BFF' --track-color '#ADD8E6'
+```
+
+</details>
+
+### 不背单词
+
+<details>
+<summary>Make your <code>不背单词（bbdc）</code> GitHub poster</summary>
+<br>
+
+在设置最下方可以获得 user_id
+![Screenshot_2022-01-15-18-58-00-833_cn com langeas](https://user-images.githubusercontent.com/31370133/149619270-f3d9b61c-c497-4dde-a0d0-09254606856d.jpg)
 
 
 ```
-python3 -m github_poster duolingo --duolingo_user_name ${duolingo_user_name}  --duolingo_jwt ${duolingo_jwt}  --year 2015-2021
+python3 -m github_poster bbdc --bbdc_user_id ${user_id} --bbdc_type ${time/word}
 or
-github_poster duolingo --duolingo_user_name ${duolingo_user_name} --duolingo_jwt ${duolingo_jwt} --year 2015-2021
+github_poster bbdc --bbdc_user_id ${user_id} --bbdc_type ${time/word}
 ```
 </details>
 
@@ -198,39 +249,47 @@ github_poster duolingo --duolingo_user_name ${duolingo_user_name} --duolingo_jwt
 <summary>Make your <code>Issue</code> GitHub poster</summary>
 <br>
 
-Like my [issue](https://github.com/yihong0618/2021/issues/5)
+可以参考我的 [issue](https://github.com/yihong0618/2021/issues/5)
+> 1. 确保issue中是有内容的
+> 2. 内容的第一行必须是数字，因为是取的第一行的数字来进行计数的
 
 ```
-	python3 -m github_poster issue --issue_number ${issue_number} --repo_name ${repo_name} --token ${github_token}
+python3 -m github_poster issue --issue_number ${issue_number} --repo_name ${repo_name} --github_token ${github_token}
 or
-github_poster issue --issue_number ${issue_number} --repo_name ${repo_name} --token ${github_token}
+github_poster issue --issue_number ${issue_number} --repo_name ${repo_name} --github_token ${github_token}
 ```
 </details>
 
 ### LeetCode
 
 <details>
-<summary>Make your <code>LeetCode</code> GitHub poster</summary>
+<summary>Make your <code>LeetCode </code> GitHub poster</summary>
 <br>
 
-Find your `LeetCode Cookie`
+需要找到你 `LeetCode` 的 `cookie`
 
 ```
 python3 -m github_poster leetcode --leetcode_cookie ${leetcode_cookie} --year 2019-2021
 or
 github_poster leetcode --leetcode_cookie ${leetcode_cookie} --year 2019-2021
 ```
+如果使用的是 leetcode-cn（leetcode 中国需要加上参数）--cn
 
+```
+python3 -m github_poster leetcode --leetcode_cookie ${leetcode_cookie} --year 2019-2021 --cn
+or
+github_poster leetcode --leetcode_cookie ${leetcode_cookie} --year 2019-2021 --cn
+```
 </details>
 
 
 ### Youtube
 
 <details>
-<summary>Make your <code>YouTube</code> GitHub poster</summary>
+<summary>Make your <code>YouTube </code> GitHub poster</summary>
 <br>
 
-Use Google [History Takeout](https://takeout.google.com/settings/takeout) to download `YouTube` history data，choose `json` format，mv `watch-history.json` to `IN-FOLDER` then run the code
+利用 Google 的[历史下载](https://takeout.google.com/settings/takeout)下载 `YouTube` 的历史数据，选择 `json` 格式，将 `watch-history.json` 拷贝到 `IN-FOLDER` 然后运行
 
 ```
 python3 -m github_poster youtube --year 2015-2021
@@ -242,25 +301,25 @@ github_poster youtube --year 2015-2021
 ### Bilibili
 
 <details>
-<summary>Make your <code>Bilibili</code> GitHub poster</summary>
+<summary>Make your <code>Bilibili </code> GitHub poster</summary>
 <br>
 
-Find your `Bilibili (XHR) cookie`
+需要找到你 `Bilibili (XHR)` 的 `cookie`
 
 ```
-python3 -m github_poster bilibili --cookie "${bilibili-cookie}"
+python3 -m github_poster bilibili --bilibili_cookie "${bilibili-cookie}"
 or
-github_poster bilibili --cookie "${bilibili-cookie}"
+github_poster bilibili --bilibili_cookie "${bilibili-cookie}"
 ```
 </details>
 
 ### GitHub
 
 <details>
-<summary>Make your <code>GitHub</code> GitHub poster</summary>
+<summary>Make your <code>GitHub </code> GitHub poster</summary>
 <br>
 
-Get your `GitHub Name` (in the url)
+需要找到你 `GitHub Name` (url 后面那个)
 
 ```
 python3 -m github_poster github --github_user_name "${github_user_name}" --with-skyline
@@ -272,19 +331,19 @@ github_poster github --github_user_name "${github_user_name}" --with-skyline
 ### GitLab
 
 <details>
-<summary>Make your <code>GitLab</code> GitLab poster</summary>
+<summary>Make your <code>GitLab </code> GitLab poster</summary>
 <br>
 
-Get your `GitLab Name` (in the url)
+需要找到你 `GitLab Name` (url 后面那个)
 
 ```
 python3 -m github_poster gitlab --gitlab_user_name "${gitlab_user_name}"
 or
-github_poster gitlab --gialab_user_name "${gitlab_user_name}"
+github_poster gitlab --gitlab_user_name "${gitlab_user_name}"
 ```
 
-For self-managed `GitLab`, specify the base url of your instance. You should use `_gitlab_session` from Cookies if sign in required.
-s
+如果是自己搭建的 `GitLab`，可以指定 `GitLab` 的 URL，以及登录 `GitLab` 后得到的 `_gitlab_session` 这个 `cookie`(如果需要登录的话)
+
 ```
 python3 -m github_poster gitlab --gitlab_user_name "${gitlab_user_name}" --base_url "https://your-gitlab.com" --session "${gitlab_session}"
 or
@@ -299,7 +358,7 @@ github_poster gitlab --gitlab_user_name "${gitlab_user_name}" --base_url "https:
 <summary>Make your <code>Kindle</code> GitHub poster</summary>
 <br>
 
-Find your [Amazon](https://www.amazon.com/) Cookie
+在亚马逊网站上需要找到你 [Amazon-CN](https://www.amazon.cn/) (XHR) Cookie
 
 ```
 python3 -m github_poster kindle --kindle_cookie ${kindle_cookie} --cn --year 2018-2021
@@ -315,10 +374,10 @@ github_poster kindle --kindle_cookie ${kindle_cookie} --cn --year 2018-2021
 <summary>Make your <code>WakaTime</code> poster</summary>
 <br>
 
-Find your own `WakaTime API Key` at: [WakaTime API Key](https://wakatime.com/settings/api-key)
+在 WakaTime 官网获取你的 WakaTime API Key：[WakaTime API Key](https://wakatime.com/settings/api-key)
 
 ```
-python -m github_poster wakatime --wakatime_key="your_wakatime_api_key" --year 2019-2021
+python3 -m github_poster wakatime --wakatime_key="your_wakatime_api_key" --year 2019-2021
 or
 github_poster wakatime --wakatime_key="your_wakatime_api_key" --year 2019-2021
 ```
@@ -331,14 +390,13 @@ github_poster wakatime --wakatime_key="your_wakatime_api_key" --year 2019-2021
 <summary>Make your <code>Dota2</code> poster</summary>
 <br>
 
-Find your `dota2_id`, eg：Dendi's ID `70388657`
-Check your dota2_id(steamid32): https://steamid.xyz/.
-Check your game data: https://api.opendota.com/api/players/{dota2_id}/matches.
-more info: https://docs.opendota.com/#section/Introduction
-
+找到 `Dota2` 的游戏 ID，例如：`Dendi` 的 ID `70388657`
+通过 `steam url/username` 查询到你的 `dota2_id` : https://steamid.xyz/
+使用 `dota2_id` 取得你的游戏数据：https://api.opendota.com/api/players/{dota2_id}/matches.
+更多接口信息：https://docs.opendota.com/#section/Introduction"
 
 ```
-python -m github_poster dota2 --dota2_id="your dota2 id" --year 2017-2018
+python3 -m github_poster dota2 --dota2_id="your dota2 id" --year 2017-2018
 or
 github_poster dota2 --dota2_id="your dota2 id" --year 2017-2018
 ```
@@ -348,15 +406,19 @@ github_poster dota2 --dota2_id="your dota2 id" --year 2017-2018
 ### Nike
 
 <details>
-<summary>Make your <code> Nike </code> poster</summary>>
+<summary>Make your <code> Nike </code> poster</summary>
 
-**ALL need to do outside GFW**
+获取 Nike 的 refresh_token
+
+获取 Nike 的 refresh_token
+
+**全部需要在大陆以外的全局 ip 下进行**
 
 ![example img](https://user-images.githubusercontent.com/67903793/282300381-4e7437d0-65a9-4eed-93d1-2b70e360215f.png)
 
-1. Login from this [website](https://unite.nike.com/s3/unite/mobile.html?androidSDKVersion=3.1.0&corsoverride=https%3A%2F%2Funite.nike.com&uxid=com.nike.sport.running.droid.3.8&backendEnvironment=identity&view=login&clientId=VhAeafEGJ6G8e9DxRUz8iE50CZ9MiJMG), open F12 -> XHR -> get the `refresh_token` from login api.
+1. 在这里登陆[website](https://unite.nike.com/s3/unite/mobile.html?androidSDKVersion=3.1.0&corsoverride=https%3A%2F%2Funite.nike.com&uxid=com.nike.sport.running.droid.3.8&backendEnvironment=identity&view=login&clientId=VhAeafEGJ6G8e9DxRUz8iE50CZ9MiJMG), 打开 F12 在浏览器抓 login -> XHR -> get the `refresh_token` from login api
 
-2. copy this `refresh_token` and use it in GitHub Secrets or in command line
+2. 复制 `refresh_token`
 
 ```
 python3 -m github_poster nike --nike_refresh_token="your nike_refresh_token" --year 2012-2021
@@ -371,20 +433,19 @@ github_poster nike --nike_refresh_token="your nike_refresh_token" --year 2012-20
 <details>
 <summary>Make your <code> Notion </code> poster</summary>
 
-Get Notion `Internal Integration Token`(notion_token), see [here](https://developers.notion.com/docs/authorization#authorizing-internal-integrations) for more details.
+获取 Notion 的 `Internal Integration Token`(notion_token)，查看[官方文档](https://developers.notion.com/docs/authorization#authorizing-internal-integrations)获取更多信息。
 
-1. Sign in [Notion](https://www.notion.so/my-integrations) developers site
-2. Click 'New integration' to create a new token
-3. You can see `Internal Integration Token` below `Secrets` after submit
+1. 登录 [Notion](https://www.notion.so/my-integrations) 开发者网站
+2. 点击「New integration」添加基础信息后，创建新的 Token
+3. 提交后可以看到 `Secrets` 下的 `Internal Integration Token`
 
-Get Notion Database ID(database_id), see [here](https://developers.notion.com/docs/working-with-databases#adding-pages-to-a-database) for more details.
+获取用于生成 Poster 的 Notion 数据库 ID(database_id)，查看[官方文档](https://developers.notion.com/docs/working-with-databases#adding-pages-to-a-database)获取更多信息。
 
-1. Open the database as a full page in Notion
-2. Use the `Share` menu to `Copy link`, and you'll get a URL looks like `https://www.notion.so/{workspace_name}/{database_id}?v={view_id}`
-3. The part that corresponds to `{database_id}` is the ID of your Notion Database
+1. 以全屏页面打开数据库
+2. 复制页面链接，链接组成应该是 `https://www.notion.so/{workspace_name}/{database_id}?v={view_id}` 这样的
+3. 其中 `{database_id}` 部分即为数据库 ID
 
-Note：The database need a property which type is `Date`, the value of it will be used to generate the poster.
-The name of the date property should be set as option `prop_name`'s value，default value is `Datetime`
+注：数据库需要添加一个属性类型为 `Date` 的日期属性，该属性的值将作为生成 Poster 的日期数据使用。在生成时需将该日期属性的名称作为选项 `prop_name` 的值，默认值为 `Datetime`
 
 ```
 python3 -m github_poster notion --notion_token="your notion_token" --database_id="your database_id" --prop_name="your prop_name"
@@ -396,7 +457,6 @@ github_poster notion --notion_token="your notion_token" --database_id="your data
 
 ### Garmin
 <details>
-
 <summary>Make your <code> Garmin </code> poster</summary>
 
 需要填写 Garmin 的账号和密码
@@ -414,7 +474,7 @@ github_poster garmin --garmin_user_name ${user_name} --garmin_password ${pass_wo
 <summary>Make your <code> Forest </code> GitHub poster</summary>
 <br>
 
-Need to add your Forest email and password
+需要填写 Forest 的邮箱账号和密码，如果你转到了中国区，需要添加 `--cn` 参数
 
 ```
 python3 -m github_poster forest --forest_email ${user_name} --forest_password ${pass_word} --year 2016-2021 --special-color1 blue --me yihong0618
@@ -439,13 +499,14 @@ github_poster json --json_file "your json data file" --year 2019-2021 --me Pytho
 
 </details>
 
+
 ### Multiple
 
 <details>
 <summary>Make your <code>Multiple types</code> poster</summary>
 <br>
 
-support multiple types
+多个 types 最多支持三个，参数参考上面文档
 
 ```
 python3 -m github_poster multiple  --types "github, strava"  --github_user_name "github user name" --strava_client_id  "your strava client id"  --strava_client_secret "your strava client secret"  --strava_refresh_token "your strava refresh token"  --year 2020-2021
@@ -461,25 +522,32 @@ github_poster multiple  --types "github, strava" --github_user_name "github user
 <summary>Make your <code>Summary types</code> poster</summary>
 <br>
 
-support summary types
+多个 types，参数参考上面文档
 
 ```
-python3 -m github_poster summary  --types "github, strava"  --github_user_name "github user name" --strava_client_id  "your strava client id"  --strava_client_secret "your strava client secret"  --strava_refresh_token "your strava refresh token"  --year 2021
+python3 -m github_poster summary --types "github, strava" --github_user_name "github user name" --strava_client_id  "your strava client id"  --strava_client_secret "your strava client secret"  --strava_refresh_token "your strava refresh token"  --year 2021
 or
-github_poster summary  --types "github, strava"  --github_user_name "github user name" --strava_client_id  "your strava client id"  --strava_client_secret "your strava client secret"  --strava_refresh_token "your strava refresh token"  --year 2021
+github_poster summary --types "github, strava"  --github_user_name "github user name" --strava_client_id  "your strava client id"  --strava_client_secret "your strava client secret"  --strava_refresh_token "your strava refresh token"  --year 2021
 ```
 </details>
 
-### Jike
+## 即刻
 
 <details>
-<summary>Make your <code>Jike(source data) types</code> poster</summary>
+<summary>Make your <code>即刻 (source data) types</code> poster</summary>
 <br>
 
-need to find your Jike cookie from `Jike (XHR)` and `jike_user_id`, `jike_user_id` can be found in your personal page link
-eg. in the link `https://web.okjike.com/u/82D23B32-CF36-4C59-AD6F-D05E3552CBF3`, `82D23B32-CF36-4C59-AD6F-D05E3552CBF3` is the user_id
+需要找到你的 `Jike (XHR)` 的 `cookie` 和 `jike_user_id`，`jike_user_id` 可在个人主页的链接中获取：
+如`https://web.okjike.com/u/82D23B32-CF36-4C59-AD6F-D05E3552CBF3`中`82D23B32-CF36-4C59-AD6F-D05E3552CBF3`为`user_id`
 
-ps. only get the data for the last year
+ps. 只能获取最近一年的数据
+
+可选参数`count_type`，指定统计类型:
+- `record`: 动态记录数（默认）
+- `like`: 动态被点赞数
+- `share`: 动态被分享数
+- `comment`: 动态被评论数
+- `repost`: 动态被转发数
 
 ```
 python3 -m github_poster jike --jike_cookie "your jike cookie" --jike_user_id 'your jike user id' --year 2021 --me "your name" --with-animation --animation-time 14 --count_type 'like'
@@ -487,23 +555,51 @@ or
 github_poster jike --jike_cookie "your jike cookie" --jike_user_id "your jike user id" --year 2021 --me "your name" --with-animation --animation-time 14 --count_type 'like'
 ```
 
-Option argument `count_type`, you can specify statistics type:
-- `record`: post num (default)
-- `like`: post be liked num
-- `share`: post be share num
-- `comment`: post be comment num
-- `repost`: post be repost num
+</details>
 
+## 微信读书
+
+<details>
+<summary>Make your <code>微信读书 (source data) types</code> poster</summary>
+<br>
+
+需要获取微信读书网页版的 Cookie
+
+How to:
+
+- 浏览器打开 https://weread.qq.com/
+- 微信扫码登录确认，提示没有权限忽略即可
+- 按F12进入开发者模式，依次点 Network -> Doc -> Headers-> cookie。复制 Cookie 字符串;
+
+```
+python3 -m github_poster weread --weread_cookie "your weread cookie" --year 2020-2022 --me "your name"
+or
+github_poster weread --weread_cookie "your weread cookie" --year 2020-2022 --me "your name"
+```
+
+</details>
+
+### Covid
+
+<details>
+<summary>Make <code> COVID-19 </code> GitHub poster</summary>
+<br>
+
+```
+python3 -m github_poster covid --covid_area China --year 2020-2022 --me China
+or
+github_poster covid --covid_area US --year 2020-2022 --me US
+```
 </details>
 
 ### Todoist
 
 <details>
-<summary>Make <code> Todoist Task Completion </code> GitHub poster</summary>
+<summary>Make <code> Todoist 完成任务 </code> GitHub poster</summary>
 
-Because of Todoist policies, only users with Pro Plan(or above) can retrieve full historical activity from APIs.
+Todoist因为接口限制，只有Pro Plan的付费用户可以获取所有的历史数据，并统计对应的热图。
 
-Get your token please find on [Todoist Developer Docs](https://developer.todoist.com/guides/#developing-with-todoist)
+Token获取请参考：[Todoist Developer Docs](https://developer.todoist.com/guides/#developing-with-todoist)
 
 <br>
 
@@ -514,12 +610,12 @@ github_poster todoist --year 2021-2022 --todoist_token "your todoist dev token" 
 ```
 </details>
 
-### OpenLanguage
+### 开言英语
 
 <details>
-<summary>Make <code> OpenLanguage </code> GitHub poster</summary>
+<summary>Make <code> 开言英语 </code> GitHub poster</summary>
 
-For some reason, make sure your password only has letters and numbers, otherwise you will get an error.
+因为某种原因，请保证你的密码只有字母和数字，否则会报错。
 <br>
 
 ```
@@ -533,13 +629,11 @@ github_poster openlanguage --year 2021-2022 --openlanguage_user_name "you accoun
 <details>
 <summary>Make <code> Apple Health </code> GitHub poster</summary>
 
-Apple Health has plenty of data that can be visualized. 
-At this moment this loader only supports Move, Exercise, and Stand data from Apple Watch Activity but any record Apple Health has can be supported in the same way.
+Apple Health 里有丰富的数据，此 loader 暂时只支持 Apple Watch Activity 里的三大项，即 Move，Exercise，Stand。但理论上任何 Apple Health 里的数据都能支持。
 
-Loader has two modes: 
+Loader 支持两种模式: 
 
-increment mode (default）is good for daily update. iOS Shortcut can be used to trigger a workflow running loader on this mode.
-Read [this repo](https://github.com/yihong0618/iBeats) for more details.
+increment 模式（默认）适用于每日更新，可利用 Shortcut 每日自动触发，参考 https://github.com/yihong0618/iBeats
 <br>
 ```
 python3 -m github_poster apple_health --date <date-str> --value <value> --apple_health_record_type <move, exercise, stand> --me "your name"
@@ -547,14 +641,15 @@ or
 github_poster apple_health --appple_health_date <date-str> --apple_health_value <value> --apple_health_record_type <move, exercise, stand> --me "your name"
 ```
 
-backfill mode is good for dumping all data at once.
-Open the Health App, click on the avatar on the top right corner, select "Export All Health Data" on the bottom, copy the zip file to `IN-FOLDER` and unzip. You will get a `apple_health_export` folder. Then run:
+backfill 模式适用于一次性导入所有数据。
+打开 Health App, 点击右上方头像，选择 Export All Health Data, 将所得压缩包拷贝到 `IN-FOLDER` 后解压，会得到一个 `apple_health_export` 文件夹。之后运行:
 <br>
 ```
 python3 -m github_poster apple_health --apple_health_mode backfill --year 2015-2021 --apple_health_record_type <move, exercise, stand> --me "your name"
 or
 github_poster apple_health --apple_health_mode backfill --year 2015-2021 --apple_health_record_type <move, exercise, stand> --me "your name"
 ```
+
 </details>
 
 ### ChatGPT
@@ -563,7 +658,7 @@ github_poster apple_health --apple_health_mode backfill --year 2015-2021 --apple
 <summary>Make your <code> ChatGPT </code> GitHub poster</summary>
 <br>
 
-Copy the conversations.json from ChatGPT's official export history to `IN-FOLDER`, then run (renamed to chatgpt-history.json)
+将ChatGPT官方导出的历史记录中的conversations.json， 拷贝到 `IN-FOLDER` 然后运行(重命名为 chatgpt-history.json)
 
 ```
 python3 -m github_poster chatgpt 
@@ -578,17 +673,17 @@ github_poster chatgpt --me yihong0618
 <summary>Make your <code>NeoDB</code> GitHub poster</summary>
 <br>
 
-Using the API provided by NeoDB, we can easily make GitHub Poster with marks as data.
+利用 NeoDB 提供的 API，可以方便地制作以标注作为数据的 GitHub Poster。
 
-An access token is needed, which can be obtained from [NeoDB's developer page](https://neodb.social/developer).
+需要在 [NeoDB 的开发者页面](https://neodb.social/developer)获取访问用户信息的 token。
 
-There are to parameters for neodb module. `neodb_token`` is the token you get from [NeoDB's developer page](https://neodb.social/developer), `mark_type`` is the type of marks you want to import, which can be one of `complete`, `wishlist` and `progress`.
+neodb 模块需要两个参数，`neodb_token` 为获取到的 token，`mark_type` 对应 NeoDB 上标注的三种分类：`complete`, `wishlist`, `progress`.
 
 ```
 python3 -m github_poster neodb --neodb_token <token> --mark_type <complete, wishlist, progress, all> --me "your name"
 ```
 
-Moreover, you can choose `all` as `mark_type` to import all marks.
+特别地，`mark_type` 也可以选择 `all`, 此时会将三种分类的标注都导入。
 
 </details>
 
@@ -598,24 +693,39 @@ Moreover, you can choose `all` as `mark_type` to import all marks.
 <summary>Make your <code>AutoSleep</code> Github poster</summary>
 <br>
 
-Export your `AutoSleep` data from app（eg. autosleep.csv）, then run
+导出 AutoSleep 的数据（eg. autosleep.csv）
 
 ```
 python3 -m github_poster autosleep --autosleep_file "your csv file" --me "your name"
 or
 github_poster autosleep --autosleep_file "your csv file" --me "your name"
 ```
+
 </details>
 
-# Contribution
+### Google Keep
 
-- Any Issues PR welcome.
-- Any new loader welcome
-- how to write new loader by `ruter`(Chinese) [如何为 GithubPoster 添加 loader](https://umm.js.org/p/c88bf4c7/)
+<details>
+<summary>Make your <code>Google Keep</code> GitHub poster</summary>
+<br>
 
-Before submitting PR:
-- Format Python code with `black` (`black .`)
-- Format Python code with `isort` (`isort --profile black  **/**/*.py`)
+导出 Google Keep 的数据，并解压（eg. Takeout/Keep）
+
+```
+python3 -m github_poster googlekeep --gkeep_dir "your export folder" --me "your name"
+or
+github_poster googlekeep --gkeep_dir "your export folder" --me "your name"
+```
+
+# 参与项目
+
+- 任何 Issues PR 均欢迎。
+- 可以提交新的 loader
+- 如何编写新的loader by `ruter` [如何为 GithubPoster 添加 loader](https://umm.js.org/p/c88bf4c7/)
+
+提交PR前:
+- 使用 black 对 Python 代码进行格式化。(`black .`)
+- 使用 isort 对 Python import 进行格式化。(`isort --profile black  **/**/*.py` )
 
 # TODO
 
@@ -633,21 +743,21 @@ Before submitting PR:
 - [x] pypi
 - [x] test
 - [x] English README
-- [x] Loader doc
+- [x] 如何写 loader 的 doc
 - [ ] Refactor some code
 
 # GitHub Actions
 
 1. fork or clone this repo
-2. Change the secrets
-3. Change the `type` in `yml` file
+2. 更改需要的 secrets
+3. 更改需要的 type, 多个 type 用逗号分隔
 
 ![image](https://user-images.githubusercontent.com/15976103/116517569-be6fee00-a901-11eb-9178-55df0c3301e3.png)
 ![image](https://user-images.githubusercontent.com/15976103/116517636-d21b5480-a901-11eb-90e7-8314404f5f59.png)
 
-# Special thanks
+# 特别感谢
 
-- @[flopp](https://github.com/flopp) great repo [GpxTrackPoster](https://github.com/flopp/GpxTrackPoster)
+- @[flopp](https://github.com/flopp) 特别棒的项目 [GpxTrackPoster](https://github.com/flopp/GpxTrackPoster)
 - @[JasonkayZK](https://github.com/JasonkayZK) Wakatime loader
 - @[shaonianche](https://github.com/shaonianche) Dota2 loader
 - @[umm233](https://github.com/umm233) Jike loader
@@ -658,6 +768,8 @@ Before submitting PR:
 - @[guaguaguaxia](https://github.com/guaguaguaxia) OpenLanguage loader
 - @[rip-tyang](https://github.com/rip-tyang) AppleHealth loader
 
-# Support
+# 赞赏
 
-Thanks is enough.
+谢谢就够了
+
+Just enjoy it

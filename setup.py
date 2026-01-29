@@ -19,14 +19,15 @@ setup(
     extras_require={
         "garmin": ["garminconnect"],
         "gpx": ["gpxpy"],
-        "strava": ["stravalib"],
+        "strava": ["stravalib==0.10.4"],
         "github": ["PyGithub"],
         "skyline": ["sdf_fork"],
         "todoist": ["pandas"],
         "all": [
+            "withings_sync==4.1.0",
             "garminconnect==0.2.12",
             "gpxpy",
-            "stravalib==1.0.0",
+            "stravalib==0.10.4",
             "PyGithub",
             "sdf_fork",
             "pandas",
